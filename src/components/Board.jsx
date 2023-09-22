@@ -1,54 +1,30 @@
-import React, { useState } from "react";
-import { DndContext } from "@dnd-kit/core";
+import React from "react";
+import { Paper, Typography, Container } from "@mui/material";
 
-import { BoardBox } from "./BoardBox";
-import { Card } from "./Card";
-
-function Example() {
-  const containers = [
-    ["A1", "A2", "A3", "A4", "A5", "A6"],
-    ["B1", "B2", "B3", "B4", "B5", "B6"],
-    ["C1", "C2", "C3", "C4", "C5", "C6"],
-    ["D1", "D2", "D3", "D4", "D5", "D6"],
-    ["E1", "E2", "E3", "E4", "E5", "E6"],
-    ["F1", "F2", "F3", "F4", "F5", "F6"],
-  ];
-  const [parent, setParent] = useState(null);
-
+const Board = ({ rowsX, rowsY }) => {
+  const rowXArray = [...Array(rowsX).keys()];
+  const rowYArray = [...Array(rowsY).keys()];
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      {parent === null ? <Card id="draggable">Drag me</Card> : null}
-
-      {containers.map((innerArray, outerIndex) => (
-        <div key={outerIndex} className="board-x-row">
-          {innerArray.map((item) => (
-            <BoardBox key={item} id={item}>
-              {parent === item ? (
-                <>
-                  <Card id={"draggable draggable-" + item}>{item}</Card>
-                </>
-              ) : (
-                item
-              )}
-            </BoardBox>
+    <Container>
+      {rowYArray.map((rowX) => (
+        <div className="board-rowX" key={rowX}>
+          {rowXArray.map((rowY) => (
+            <Paper
+              className="board-rowY"
+              key={rowY}
+              elevation={0}
+              variant="outlined"
+              square={false}
+            >
+              <Typography variant="caption" display="block">
+                X:{rowX},Y:{rowY}
+              </Typography>
+            </Paper>
           ))}
         </div>
       ))}
-    </DndContext>
+    </Container>
   );
+};
 
-  function handleDragEnd(event) {
-    const { over } = event;
-
-    // If the item is dropped over a container, set it as the parent
-    /*
-    <BoardBox key={item} id={item}>
-    {parent === item ? draggableMarkup : "Drop here"}
-  </BoardBox>
-*/
-    // otherwise reset the parent to `null`
-    setParent(over ? over.id : null);
-  }
-}
-
-export default Example;
+export default Board;
