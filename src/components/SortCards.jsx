@@ -1,26 +1,16 @@
-import React from "react";
-import { Typography } from "@mui/material";
+import React, { useState } from "react";
+import EmptyCard from "./EmptyCard";
+import Card from "./Card";
 
 const SortCards = ({ rowX, rowY, data }) => {
-  return (
-    <>
-      {data.map((cardData) => {
-        console.log(
-          cardData.rowX === rowX && cardData.rowY === rowY
-            ? cardData.data.title
-            : ""
-        );
-        cardData.rowX === rowX && cardData.rowY === rowY ? (
-          <Typography variant="caption" display="block" sx={{ color: "green" }}>
-            KOrv
-          </Typography>
-        ) : (
-          <Typography variant="caption" display="block" sx={{ color: "grey" }}>
-            X:{rowX},Y:{rowY}
-          </Typography>
-        );
-      })}
-    </>
+  let cardData = data.filter(function (card) {
+    return card.rowX === rowX && card.rowY === rowY;
+  });
+
+  return cardData.length > 0 ? (
+    <Card cardData={cardData} />
+  ) : (
+    <EmptyCard rowX={rowX} rowY={rowY} />
   );
 };
 

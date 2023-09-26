@@ -1,19 +1,29 @@
 import React from "react";
-import Typography from "@mui/material";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const Card = () => {
+const Card = ({ cardData }) => {
+  let { title, text } = cardData[0].data;
   return (
-    <>
-      {data.rowX === rowX && data.rowY === rowY ? (
-        <Typography variant="caption" display="block" sx={{ color: "red" }}>
-          korv
-        </Typography>
-      ) : (
-        <Typography variant="caption" display="block" sx={{ color: "grey" }}>
-          X:{rowX},Y:{rowY}
-        </Typography>
-      )}
-    </>
+    <div style={{ backgroundColor: "white" }}>
+      <Accordion sx={{ height: "2.1em", zIndex: "10" }}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography variant="caption">{title}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{text}</Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
   );
 };
 

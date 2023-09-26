@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 import SortCards from "./SortCards";
 
 const Board = ({ rowsX, rowsY, data }) => {

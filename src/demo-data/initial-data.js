@@ -19,6 +19,24 @@ const initialData = [
       text: "Lorem ipsum",
     },
   },
+  {
+    id: uuid4(),
+    rowX: 0,
+    rowY: 1,
+    data: {
+      title: "test3",
+      text: "Lorem ipsum",
+    },
+  },
+  {
+    id: uuid4(),
+    rowX: 1,
+    rowY: 1,
+    data: {
+      title: "test4",
+      text: "Lorem ipsum",
+    },
+  },
 ];
 
 export default initialData;
