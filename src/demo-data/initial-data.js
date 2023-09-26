@@ -1,113 +1,24 @@
 import uuid4 from "uuid4";
 
-const initialData = {
-  A: [
-    [
-      {
-        row: 0,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 1,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 2,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 3,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-    ],
-    [
-      {
-        row: 0,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 1,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 2,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 3,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-    ],
-    [
-      {
-        row: 0,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 1,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 2,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-      {
-        row: 3,
-        id: uuid4(),
-        column: "A",
-        data: {},
-      },
-    ],
-  ],
-
-  C: [
-    {
-      row: 0,
-      id: uuid4(),
-      column: "C",
-      data: {},
+const initialData = [
+  {
+    id: uuid4(),
+    rowX: 3,
+    rowY: 4,
+    data: {
+      title: "test1",
+      text: "Lorem ipsum",
     },
-    {
-      row: 1,
-      id: uuid4(),
-      column: "C",
-      data: {},
+  },
+  {
+    id: uuid4(),
+    rowX: 2,
+    rowY: 5,
+    data: {
+      title: "test2",
+      text: "Lorem ipsum",
     },
-    {
-      row: 2,
-      id: uuid4(),
-      column: "C",
-      data: {},
-    },
-    {
-      row: 3,
-      id: uuid4(),
-      column: "C",
-      data: {},
-    },
-  ],
-};
+  },
+];
 
 export default initialData;
