@@ -1,3 +1,29 @@
+.cardTag {
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  margin-right: 0.2em;
+}
+
+.cardContent {
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.cardContent::-webkit-scrollbar {
+  width: 0.2em;
+}
+.cardContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.cardContent::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.cardContent::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .board-x-row {
   display: flex;
 }

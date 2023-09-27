@@ -18,12 +18,18 @@ const Board = ({ rowsX, rowsY, data }) => {
               variant="outlined"
               square={false}
               sx={{
-                height: "2.5em",
+                height: "3.3em",
                 width: "9em",
-                padding: "0.1em 0.3em",
+                padding: "0.1em",
               }}
             >
-              <SortCards rowX={rowX} rowY={rowY} data={data} />
+              <SortCards
+                rowX={rowX}
+                rowY={rowY}
+                data={data}
+                rowsX={rowsX}
+                rowsY={rowsY}
+              />
             </Paper>
           ))}
         </div>
