@@ -2,7 +2,7 @@ import React from "react";
 import EmptyCard from "./EmptyCard";
 import Card from "./Card";
 
-const SortCards = ({ rowX, rowsX, rowY, rowsY, data }) => {
+const SortCards = ({ rowX, rowsX, rowY, rowsY, data, addCard }) => {
   let cardData = data.filter(function (card) {
     return card.rowX === rowX && card.rowY === rowY;
   });
@@ -16,7 +16,7 @@ const SortCards = ({ rowX, rowsX, rowY, rowsY, data }) => {
       rowsY={rowsY}
     />
   ) : (
-    <EmptyCard rowX={rowX} rowY={rowY} />
+    <EmptyCard rowX={rowX} rowY={rowY} addCard={addCard} />
   );
 };
 

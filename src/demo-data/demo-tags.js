@@ -1,0 +1,26 @@
+const tags = [
+  { tagIndex: 1, color: "#e6194b", tagTitle: "Miscellanea" },
+  { tagIndex: 2, color: "#3cb44b", tagTitle: "Things" },
+  { tagIndex: 3, color: "#ffe119", tagTitle: "Bits and bobs" },
+  { tagIndex: 4, color: "#4363d8", tagTitle: "Gubbins" },
+  { tagIndex: 5, color: "#f58231", tagTitle: "Items" },
+  { tagIndex: 6, color: "#911eb4", tagTitle: "Odds and sods" },
+  { tagIndex: 7, color: "#46f0f0", tagTitle: "Objects" },
+  { tagIndex: 8, color: "#f032e6", tagTitle: "Mementos" },
+  { tagIndex: 9, color: "#bcf60c", tagTitle: "Objets d'art" },
+  { tagIndex: 10, color: "#fabebe", tagTitle: "Paraphernalia" },
+  { tagIndex: 11, color: "#008080", tagTitle: "Regalia" },
+  { tagIndex: 12, color: "#e6beff", tagTitle: "Gadgets" },
+  { tagIndex: 13, color: "#9a6324", tagTitle: "Novelties" },
+  { tagIndex: 14, color: "#fffac8", tagTitle: "Whatnots" },
+  { tagIndex: 15, color: "#800000", tagTitle: "Curiosities" },
+  { tagIndex: 16, color: "#aaffc3", tagTitle: "Assorted items" },
+  { tagIndex: 17, color: "#808000", tagTitle: "Curios" },
+  { tagIndex: 18, color: "#ffd8b1", tagTitle: "Trinkets" },
+  { tagIndex: 19, color: "#000075", tagTitle: "Bric-a-brac" },
+  { tagIndex: 20, color: "#808080", tagTitle: "Sundries" },
+  { tagIndex: 21, color: "#ffffff", tagTitle: "Knickknacks" },
+  { tagIndex: 22, color: "#000000", tagTitle: "Stuff" },
+];
+
+export default tags;

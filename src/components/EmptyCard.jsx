@@ -1,11 +1,21 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Stack, IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 
-const EmptyCard = ({ rowX, rowY }) => {
+const EmptyCard = ({ rowX, rowY, addCard }) => {
   return (
-    <Typography variant="caption" display="block" sx={{ color: "lightgrey" }}>
-      X:{rowX},Y:{rowY}
-    </Typography>
+    <Stack direction="row" spacing={8}>
+      <Typography variant="caption" display="block" sx={{ color: "lightgrey" }}>
+        X:{rowX},Y:{rowY}
+      </Typography>
+      <IconButton
+        size="small"
+        sx={{ color: "lightgrey" }}
+        onClick={() => addCard(rowX, rowY)}
+      >
+        <EditIcon />
+      </IconButton>
+    </Stack>
   );
 };
 

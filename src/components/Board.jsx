@@ -2,7 +2,7 @@ import React from "react";
 import { Paper } from "@mui/material";
 import SortCards from "./SortCards";
 
-const Board = ({ rowsX, rowsY, data }) => {
+const Board = ({ rowsX, rowsY, data, addCard }) => {
   const rowXArray = [...Array(rowsX).keys()];
   const rowYArray = [...Array(rowsY).keys()];
 
@@ -29,6 +29,7 @@ const Board = ({ rowsX, rowsY, data }) => {
                 data={data}
                 rowsX={rowsX}
                 rowsY={rowsY}
+                addCard={addCard}
               />
             </Paper>
           ))}

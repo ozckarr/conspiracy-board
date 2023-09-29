@@ -12,46 +12,46 @@ import Tag from "./minicomponents/Tag";
 import EditIcon from "@mui/icons-material/Edit";
 
 const Card = ({ cardData, rowX, rowsX, rowY, rowsY }) => {
-  const [openCard, setOpenCard] = useState(false);
+  const [isCardOpen, setIsCardOpen] = useState(false);
   let { title, text, color, tags } = cardData[0].data;
 
   const handleClick = () => {
-    setOpenCard(!openCard);
+    setIsCardOpen(!isCardOpen);
   };
 
   return (
     <MuiCard
       sx={{
         backgroundColor: color,
-        height: openCard ? "19.7em" : "100%",
+        height: isCardOpen ? "19.7em" : "100%",
         position: "relative",
         zIndex: rowsX + rowsY - rowX - rowY,
         padding: "0.3em 0.5em",
-        width: openCard ? "17.7em" : "100%",
+        width: isCardOpen ? "17.7em" : "100%",
       }}
       variant="outlined"
     >
       <Stack
         direction="row"
-        spacing={openCard ? 24 : 6}
+        spacing={isCardOpen ? 22 : 6}
         onClick={handleClick}
         sx={{
           cursor: "pointer",
-          borderBottom: openCard ? "1px solid grey" : "none",
+          borderBottom: isCardOpen ? "1px solid grey" : "none",
         }}
       >
-        <div>
+        <div style={{ width: "fit-content" }}>
           <Typography>{title}</Typography>
-          <div style={{ display: "flex" }}>
+          <div className="tag-container" style={{ display: "flex" }}>
             {tags.map((tag, i) => (
-              <Tag tag={tag} key={i} />
+              <Tag tag={tag} key={i} isBig={false} />
             ))}
           </div>
         </div>
         <IconButton
           sx={{
             width: "2em",
-            transform: openCard ? "rotate(180deg)" : "rotate(0deg)",
+            transform: isCardOpen ? "rotate(180deg)" : "rotate(0deg)",
           }}
         >
           <ExpandMoreIcon />
@@ -62,10 +62,16 @@ const Card = ({ cardData, rowX, rowsX, rowY, rowsY }) => {
           backgroundColor: "rgb(0,0,0,0)",
           padding: "0.5em",
           overflowY: "scroll",
-          height: "14em",
+          maxHeight: "14em",
+          display: isCardOpen ? "block" : "none",
         }}
         className="cardContent"
       >
+        <div className="tag-container" style={{ display: "flex" }}>
+          {tags.map((tag, i) => (
+            <Tag tag={tag} key={i} isBig={true} />
+          ))}
+        </div>
         <Typography>{text}</Typography>
       </Paper>
       <CardActions

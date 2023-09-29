@@ -1,8 +1,24 @@
-.cardTag {
-  height: 0.5em;
-  width: 0.5em;
-  border-radius: 50%;
-  margin-right: 0.2em;
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .cardTag {
+    margin-right: 0.3em;
+
+    &.cardTag-big {
+      border-radius: 0.6em;
+      padding: 0 0.6em;
+      margin-bottom: 0.2em;
+      p {
+        font-size: 0.8em;
+      }
+    }
+    &.cardTag-small {
+      border-radius: 50%;
+      height: 0.6em;
+      width: 0.6em;
+    }
+  }
 }
 
 .cardContent {
